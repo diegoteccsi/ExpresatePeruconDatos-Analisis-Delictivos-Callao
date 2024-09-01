@@ -9,6 +9,12 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
   html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+  .contenedor-texto {
+    width: 95%;
+    max-width: 1200px;
+    padding-left: 10px;
+    text-align: justify;
+  }
   .contenedor-imagen {
     width: 100%;
     margin: 0;
@@ -16,7 +22,7 @@
   }
   .map-container {
     min-width: 360;
-    
+
     height: 1000px;
     border: 10px solid #ffffff;
     overflow: hidden;
@@ -53,52 +59,98 @@
     </div>
     <hr>
     <div class="w3-bar-block">
-    <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Close Menu</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding w3-blue">  Introducción</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding">  Análisis de Registros Delictivos</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding">  Mapa de la delincuencia</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding">  Geo</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding">  Orders</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding">  News</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding">  General</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding">  History</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding">  Settings</a><br><br>
+    <a href="#seccion-1" class="w3-bar-item w3-button w3-padding w3-blue">  Introducción</a>
+    <a href="#seccion-2" class="w3-bar-item w3-button w3-padding">  Dataset</a>
+    <a href="#seccion-3" class="w3-bar-item w3-button w3-padding">  Análisis de Registros Delictivos</a>
+    <a href="#seccion-4" class="w3-bar-item w3-button w3-padding">  Denuncias de violencia contra la Mujer y Grupos Vulnerables</a>
+    <a href="#seccion-5" class="w3-bar-item w3-button w3-padding">  Denuncias contra el Patrimonio y Seguridad Pública</a>
+    <a href="#seccion-6" class="w3-bar-item w3-button w3-padding">  Conclusiones</a>
+    <a href="#seccion-7" class="w3-bar-item w3-button w3-padding">  Recomendaciones</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Cerrar</a>
+
   </div>
 </nav>
-
 
 <!-- Overlay effect when opening sidebar on small screens -->
 <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
 <!-- !PAGE CONTENT! -->
-<div class="w3-main" style="margin-left:300px;margin-top:43px;">
+<div class="w3-main" style="margin-left:300px;margin-top:45px;">
+
 
   <!-- Header -->
-  <header class="w3-container" style="padding-top:22px">
-    <h5><b> Introducción</b></h5>
+  <section id="seccion-0">
+  <header class="w3-container" style="padding-top:45px">
+    <h5><b></b></h5>
   </header>
+  </section>
 
-  <hr>
-    <iframe src="docs\table_sample.html" style="width:100%; height:500px; border:none;"></iframe>
-  <hr>
-    <img src="docs\img\grafico_calor_tipos_sumatoria.png" style="width:100%; max-width: 1050px; max-height: 690; border:none;" alt="Descripción de la imagen">
-  <hr>
-    <img src="docs\img\grafico_calor_tipos_logaritmo.png" style="width:100%; max-width: 1050px; max-height: 690; border:none;" alt="Descripción de la imagen">
-  <hr>
-    <img src="docs\img\delitos_tiempo_tipo.png" style="width:100%; max-width: 1050px; max-height: 690; border:none;" alt="Descripción de la imagen">
-  <hr>
-    <img src="docs\img\mapa_calor_violencia_mujer_callao.png" style="width:100%; max-width: 480px; max-height: 630; border:none;" alt="Descripción de la imagen">
-  <hr>
+  <section id="seccion-1">
+    <div class="contenedor-texto">
+      <h3>Introducción</h3>
+      <p>En este breve informe, realizaré un análisis para determinar los tipos de denuncia más recurrentes de la Región CALLAO, 
+        utilizando el dataset compartido en la Plataforma Nacional de Datos Abiertos.
+        Se realizará una inspección a los datos y mediante gráficos daré recomendaciones para prevenir el delito basado en datos.
+      </p>
+    </div>
+  </section>
+  
+  <section id="seccion-2">
+    <div class="contenedor-texto">
+      <h3>Dataset</h3>
+      <p>El dataset contiene información sobre denuncias registradas en la región CALLAO.</p>
+      <p>Tiene <strong>2,639 registros y 26 columnas</strong> , que incluyen detalles sobre las denuncias, la ubicación geográfica, y características personales de las personas involucradas.</p>
+      <p>A continuación se describen algunas de las columnas más relevantes:</p>
+      <p><strong>FECHA_CORTE y FECHA_REGISTRO: </strong>Estas columnas indican la fecha en la que se cortó y se registró la denuncia, respectivamente.</p>
+      <p><strong>UBIGEO, DEPARTAMENTO, PROVINCIA, DISTRITO: </strong>Detalles geográficos que identifican la ubicación donde ocurrió el incidente.</p>
+      <p><strong>TIPO, SUBTIPO, MODALIDAD: </strong>Clasificaciones adicionales que describen la naturaleza del incidente denunciado.</p>
+      <p><strong>FECHA_HECHO y HORA_HECHO: </strong>La fecha y hora en la que ocurrió el incidente.</p>
+      <p><strong>DESCRIPCION: </strong>Una breve descripción del incidente.</p>
+      <p><strong>LONGITUD y LATITUD: </strong>Coordenadas geográficas que indican la ubicación exacta del incidente</p>
+      <p>Se eligió este dataset por su utilidad en resolver el desafío de la Seguridad Ciudadana que está relacionado a uno de los Objetivos de Desarrollo Sostenible.</p>
+      <p>Una muestra de este dataset se puede apreciar en la siguiente tabla:</p>
+    </div>
+    <iframe src="docs\table_sample.html" style="width:100%; height:350px; border:none;"></iframe>
+  </section>
+  
+  <section id="seccion-3">
+    <img src="docs\img\grafico_calor_tipos_sumatoria.png" style="width:100%; max-width: 1050px; max-height: 690; border:none;" alt="">
+
+  
+ 
+    <img src="docs\img\grafico_calor_tipos_logaritmo.png" style="width:100%; max-width: 1050px; max-height: 690; border:none;" alt="">
+  
+  
+ 
+    <img src="docs\img\delitos_tiempo_tipo.png" style="width:100%; max-width: 1050px; max-height: 690; border:none;" alt="">
+  </section>
+  
+  <section id="seccion-4">
+    <img src="docs\img\mapa_calor_violencia_mujer_callao.png" style="width:100%; max-width: 480px; max-height: 630; border:none;" alt="">
+
+
   <div class="map-container">
     <iframe src="docs\mapa_de_calor_violencia_mujer_ggvv.html"></iframe>
   </div>
-  <hr>
-  <hr>
-  <hr>
-  <hr>
-  <hr>
-  <hr>
+  </section>
   
+  <section id="seccion-5">
+  <img src="docs\img\mapa_calor_patrimonio_sspp.png" style="width:100%; max-width: 480px; max-height: 630; border:none;" alt="">
+
+
+  <div class="map-container">
+    <iframe src="docs\mapa_de_calor_patrimonio_sspp.html"></iframe>
+  </section>
+
+  <section id="seccion-6">
+
+  </section>
+
+  <section id="seccion-7">
+
+
+  </section>
+ 
   <!-- Footer -->
   <footer class="w3-container w3-padding-16" style="background-color: #BF0909; color: #FFFFFF;">
     <h4 style="color: #FFFFFF;">Exprésate Perú con Datos - 2024</h4>
