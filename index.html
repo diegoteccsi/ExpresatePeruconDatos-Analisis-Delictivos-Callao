@@ -107,48 +107,94 @@
       <p><strong>FECHA_HECHO y HORA_HECHO: </strong>La fecha y hora en la que ocurrió el incidente.</p>
       <p><strong>DESCRIPCION: </strong>Una breve descripción del incidente.</p>
       <p><strong>LONGITUD y LATITUD: </strong>Coordenadas geográficas que indican la ubicación exacta del incidente</p>
-      <p>Se eligió este dataset por su utilidad en resolver el desafío de la Seguridad Ciudadana que está relacionado a uno de los Objetivos de Desarrollo Sostenible.</p>
+      <p>Se eligió este dataset por su utilidad para resolver el desafío de la Seguridad Ciudadana que está relacionado a uno de los Objetivos de Desarrollo Sostenible.</p>
       <p>Una muestra de este dataset se puede apreciar en la siguiente tabla:</p>
     </div>
     <iframe src="docs\table_sample.html" style="width:100%; height:350px; border:none;"></iframe>
   </section>
   
   <section id="seccion-3">
+    <div class="contenedor-texto">
+      <h3>Análisis de Registros Delictivos</h3>
+      <p>Para explorar los datos se realiza una tabla de doble entrada que organiza los datos por <strong>TIPO y SUBTIPO.</strong></p>
+      <p>Los valores de las celdas representan la cantidad de registros, con un sombreado de color que va de más oscuro a más claro, indicando la magnitud de la cantidad.</p>
+      <p></p>
+      <p>Se observa que los tipos de denuncia más frecuentes son <strong>'VIOLENCIA A MUJERES Y GRUPOS VULNERABLES'</strong>, seguido por <strong>'PATRIMONIO'</strong>, que incluye una amplia variedad de subtipos como <strong>'ROBO' y 'HURTO'.</strong></p>
+      <p>Otros tipos como <strong>'SEGURIDAD PUBLICA' y 'FE PUBLICA'</strong> también muestran un número significativo de casos, pero en menor cantidad comparado con los primeros.</p>
+    </div>
     <img src="docs\img\grafico_calor_tipos_sumatoria.png" style="width:100%; max-width: 1050px; max-height: 690; border:none;" alt="">
-
-  
- 
+    <div class="contenedor-texto">
+      <p>El gráfico anterior ayuda en visualizar como está distribuido los datos según los Tipos y Subtipos de registros, pero se requiere emplear técnicas que permitan visualizar de manera efectiva tanto valores altos como los bajos.</p>
+      <p>Para este siguiente gráfico he utilizado una escala logarítmica para representar la cantidad de registros lo que ha facilitado la identificación de patrones y la comparación entre diferentes categorías.</p>
+    </div>
     <img src="docs\img\grafico_calor_tipos_logaritmo.png" style="width:100%; max-width: 1050px; max-height: 690; border:none;" alt="">
-  
-  
- 
+    <div class="contenedor-texto">
+      <p>Al observar la distribución logarítmica, se logra identificar los principales tipos de delitos en términos relativos. En este caso, 
+      <strong>'VIOLENCIA A MUJERES Y GGVV', 'PATRIMONIO', 'SEGURIDAD PUBLICA', 'FE PUBLICA', 'LIBERTAD' y 'VIDA, CUERPO Y SALUD'</strong> emergen claramente como los tipos de denuncia más predominantes. Esto nos proporciona una base para priorizar los enfoques en campañas de sensibilización o prevención. 
+      Pero por supuesto esto no signfica que deba dejarse a un lado las demas problemáticas.</p>
+    </div> 
+    <div class="contenedor-texto">
+      <p>Ahora, teniendo en cuenta los tipos predominantes, realizaré un gráfico para ver la distribución de la cantidad total de delitos por distrito</p>
+    </div>
+    <img src="docs\img\delitos_por_distrito.png" style="width:100%; max-width: 1050px; max-height: 690; border:none;" alt="">  
+    <div class="contenedor-texto">
+      <p>Claramente se puede observar que el distrito de CALLAO tiene la mayor cantidad de denuncias en comparación con los demás distritos.
+      Sin embargo, no podemos encontrar un patrón claro por que para eso necesitariamos datos de la cantidad de habitantes o el tamaño del distrito.</p>
+      <p>Veamos ahora con un gráfico de distribución porcentual:</p>
+    </div>
+    <img src="docs\img\distribucion_porcentual_por_distrito.png" style="width:100%; max-width: 1050px; max-height: 690; border:none;" alt="">  
+    <div class="contenedor-texto">
+      <p>Se observa que la 'VIOLENCIA A MUJERES Y GGVV' ocupa la mayor cantidad de denuncias en todos los distritos, mientras que 'PATRIMONIO' y 'SEGURIDAD PUBLICA' se reparten un gran porcentaje restante, incluso variando entre distritos.</p>
+      <p>Haciendo una inspección en Excel sobre los datos, he notado que la mayor cantidad de registros por <strong>'FECHA_HECHO'</strong> se sitúan entre el 20/01/2024 al 01/03/2024.
+      Lo que se logra ver en el siguiente gráfico en función al tiempo y a los tipos seleccionados.</p>
+    </div>
     <img src="docs\img\delitos_tiempo_tipo.png" style="width:100%; max-width: 1050px; max-height: 690; border:none;" alt="">
+    <div class="contenedor-texto">
+      <p>Si bien, llama la atención que la mayor parte de los datos son justo antes del corte, la distribución de los tipos de delitos más frecuentes se mantiene en el tiempo dando así una idea para priorizar los esfuerzos en reducir estos delitos</p>
+    </div>     
   </section>
-  
   <section id="seccion-4">
+    <div class="contenedor-texto">
+      <h3>Denuncias de violencia contra la Mujer y Grupos Vulnerables</h3>
+      <p>Luego de realizar un análisis a los datos, se ve conveniente utilizar los datos geoespaciales para encontrar un patrón sobre la ubicación de los lugares donde ocurren mayormente este tipo de denuncias</p>
+      <p>El siguiente gráfico muestra un mapa de calor evidenciando que hay una gran zona roja en el distrito del CALLAO.</p>
+    </div>
     <img src="docs\img\mapa_calor_violencia_mujer_callao.png" style="width:100%; max-width: 480px; max-height: 630; border:none;" alt="">
-
-
-  <div class="map-container">
-    <iframe src="docs\mapa_de_calor_violencia_mujer_ggvv.html"></iframe>
-  </div>
+    <div class="contenedor-texto">
+      <p>Aunque el gráfico anterior ofrece una visualización de los datos en un mapa de calor, podemos perder cierta precisión geoespacial.</p>
+      <p>El siguiente gráfico nos da una representación más detallada y precisa al superponer los datos en un mapa, lo cual ayuda a facilitar la identificación de zonas rojas sobre los delitos contra la Mujer y Grupos Vulnerables.</p>
+    </div>
+    <div class="map-container">
+      <iframe src="docs\mapa_de_calor_violencia_mujer_ggvv.html"></iframe>
+    </div>
   </section>
-  
   <section id="seccion-5">
-  <img src="docs\img\mapa_calor_patrimonio_sspp.png" style="width:100%; max-width: 480px; max-height: 630; border:none;" alt="">
-
-
-  <div class="map-container">
-    <iframe src="docs\mapa_de_calor_patrimonio_sspp.html"></iframe>
-  </section>
-
+    <div class="contenedor-texto">
+      <h3>Denuncias contra el Patrimonio y Seguridad Pública</h3>
+      <p>Similar a la exploración de los datos en el gráfico anterior, ahora voy a visualizar la cantidad de denuncias sobre el Patrimonio y la Seguridad Pública en un mapa de calor, tal como se aprecia en la siguiente imagen:</p>
+    </div>
+    <div class="map-container">
+      <iframe src="docs\mapa_de_calor_patrimonio_sspp.html"></iframe>
+    </section>
+    <div class="contenedor-texto">
+      <p>No es de extrañar que las zonas rojas representan los lugares donde ocurren la mayor cantidad de delitos de este tipo, pero teniendo como apoyo a la visualización de datos las entidades públicas pueden identificar los lugares críticos de mayor concentración de delitos y
+      planificar acciones o estrategias en basándose en información.
+      </p>
+    </div>
   <section id="seccion-6">
-
+    <div class="contenedor-texto">
+      <h3>Conclusiones</h3>
+      <p>conclusiones</p>
+    </div>
   </section>
-
   <section id="seccion-7">
-
-
+    <div class="contenedor-texto">
+      <h3>Recomendaciones</h3>
+      <p>Se propone realizar campañas de concientización contra la violencia a la mujer y grupos vulnerables. De preferencia enfocarlo en zonas recomandadas por el gráfico de mapa de calor.
+        - Se propone ubicar casetas de serenazgo y realizar patrujalle en las zonas de mayor cantidad de denuncias utilizando como referencia el mapa de calor.
+        - Se recomienda realizar este análisis con mayor cantidad de datos y de diversos años y meses para así encontrar patrones de comportamiento estacional.
+        - Con una mayor cantidad de datos se podría generar determinar con mayor precisión las ubicaciones óptimas de las casetas de serenazgo con el objetivo de minimizar el tiempo de respuesta ante un hecho delictivo.</p>
+    </div>
   </section>
  
   <!-- Footer -->
