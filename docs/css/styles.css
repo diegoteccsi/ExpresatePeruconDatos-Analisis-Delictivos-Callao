@@ -2,14 +2,14 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 20px;
-    background-color: #f4f4f4;
+    background-color: #FFFFFF;
 }
 
 .table-container {
     width: 100%;
     overflow-x: auto;
     background-color: #fff;
-    padding: 10px;
+    padding: 8px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -17,7 +17,7 @@ body {
 .responsive-table {
     width: 100%;
     border-collapse: collapse;
-    min-width: 300px;
+    min-width: 200px;
 }
 
 .responsive-table th,
@@ -33,11 +33,11 @@ body {
     color: #ffffff;
     font-weight: bold;
     text-transform: uppercase;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .responsive-table td {
-    font-size: 14px;
+    font-size: 12px;
     color: #333333;
 }
 
@@ -45,6 +45,6 @@ body {
     .responsive-table th,
     .responsive-table td {
         font-size: 12px;
-        padding: 10px;
+        padding: 5px;
     }
 }
